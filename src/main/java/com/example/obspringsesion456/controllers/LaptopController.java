@@ -83,4 +83,5 @@ public class LaptopController {
         laptopRepository.deleteAll();
         return ResponseEntity.noContent().build();
     }
+
 }
