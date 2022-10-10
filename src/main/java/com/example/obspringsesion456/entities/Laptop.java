@@ -1,11 +1,15 @@
 package com.example.obspringsesion456.entities;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@ApiModel("Representa el modelo de laptops con distintos atributos")
 public class Laptop {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +20,7 @@ public class Laptop {
     private Double pantalla;
     private Integer almacenamiento;
     private Integer ram;
+    @ApiModelProperty("El precio se reprensenta en Pesos Argentinos")
     private Double precio;
     private Boolean windows;
 
