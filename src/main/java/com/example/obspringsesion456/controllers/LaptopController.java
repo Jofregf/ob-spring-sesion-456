@@ -5,6 +5,7 @@ import com.example.obspringsesion456.repository.LaptopRepository;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +16,8 @@ import java.util.Optional;
 @RestController
 public class LaptopController {
 
+    @Value("${app.message}")
+    String message;
     private LaptopRepository laptopRepository;
 
     public LaptopController(LaptopRepository laptopRepository) {
@@ -24,6 +27,7 @@ public class LaptopController {
     @GetMapping("/api/laptops")
     @ApiOperation("Buscar todas las laptops almacenadas en la base de datos")
     public List<Laptop> findAll() {
+        System.out.println(message);
         return laptopRepository.findAll();
     }
 
